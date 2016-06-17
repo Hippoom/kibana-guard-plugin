@@ -3,12 +3,18 @@
   "version": "0.0.1",
   "scripts": {
     "lint": "eslint .",
-    "lintThe": "eslint"
+    "lintThis": "eslint",
+    "lintStaged": "git diff --name-only --cached | grep -E '(.js)$' | xargs eslint",
+    "validate": "npm ls"
   },
   "devDependencies": {
     "babel-eslint": "4.1.3",
     "escope": "^3.3.0",
     "eslint": "1.5.1",
-    "eslint-plugin-mocha": "1.0.0"
-  }
+    "eslint-plugin-mocha": "1.0.0",
+    "precommit-hook": "^3.0.0"
+  },
+  "pre-commit": [
+    "lintStaged"
+  ]
 }

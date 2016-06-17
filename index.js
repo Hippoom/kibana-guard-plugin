@@ -14,7 +14,7 @@ module.exports = function (kibana) {
         enabled: Joi.boolean().default(true),
       }).default();
     },
-init(server, options) {
+    init(server, options) {
 
     }
 
